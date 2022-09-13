@@ -3,7 +3,7 @@
 #include <dirent.h>
 
 #include "mili.h"
-
+#include "mili_config.h"
 
 char directory[512];
 char plotfile_name[512];
@@ -218,7 +218,9 @@ main( int argc, char *argv[] )
         fprintf(stderr, "Usage: makemili_driver base_filename\n");
         return 101;
     }
-    
+    fprintf(stderr, "\n\n");                                               ;
+   fprintf(stderr, "\n\t Running Makemili_driver Version: %s(%s)", PACKAGE_VERSION,PACKAGE_DATE);
+   fprintf(stderr, "\n\n");
     pad = find_pad_count(argv[1]);
     
     // The pad will tell us what kind of file this is.
